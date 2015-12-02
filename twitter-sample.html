@@ -59,6 +59,8 @@
         webSocket.onmessage = function(event){
             var e = jQuery.parseJSON( event.data );
             $("tr#waiting").hide();
+
+            // For debugging purposes
             console.log(e);
 
             var t = e.created_at,
