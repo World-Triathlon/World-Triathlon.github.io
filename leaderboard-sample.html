@@ -65,11 +65,17 @@
             var c = e.category,
                 n = e.name,
                 t = e.timing_point,
-                a = e.athlete;
+                a = e.athlete,
+                b = "",
+                i = 1;
 
-                //r = "<tr><td>" + n + "</td><td>" + e.user.name + "</td><td>" + p + "</td><td>" + e.tweet + "</td></tr>";
 
-            //$("#trade_table tbody").prepend(r);
+            a.forEach(function(d){
+                b += "<tr><td>" + i + "</td><td>" + d.name + "</td><td>" + d.country + "</td><td>" + d.difference + "</td></tr>";
+                i++;
+            });
+
+            $("#trade_table tbody").html(b);
 
         };
     }
