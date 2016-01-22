@@ -16,7 +16,7 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Live Leaderboard</h2>
-            <h4>Event name - Program - timing-point</h4>
+            <h4 id="meta-info">Waiting for update...</h4>
             <table class="table table-bordered table-hover table-striped" id="trade_table">
                 <thead>
                 <tr>
@@ -78,6 +78,7 @@
             });
 
             $("#trade_table tbody").html(b);
+            $("#meta-info").html(n + c + t);
 
         };
     }
