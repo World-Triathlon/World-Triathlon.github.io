@@ -15,20 +15,19 @@
     <h1>Streaming API Websocket Leaderboard Example</h1>
     <div class="row">
         <div class="col-md-12">
-            <h2>Latest Tweets</h2>
+            <h2>Live Leaderboard</h2>
             <table class="table table-bordered table-hover table-striped" id="trade_table">
                 <thead>
                 <tr>
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Nat</th>
                     <th>Time</th>
-                    <th>User</th>
-                    <th>Profile Image</th>
-                    <th>Tweet</th>
-                    <th>Source</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr id="waiting">
-                    <td colspan="6">Waiting for the next tweet to arrive...</td>
+                    <td colspan="6">Waiting for the next timing update to arrive...</td>
                 </tr>
                 </tbody>
             </table>
@@ -63,10 +62,12 @@
             // For debugging purposes
             console.log(e);
 
-            var t = e.created_at,
-                    n = moment(t).format("h:mm a"),
-                    p = "<img width='32px' height='32px' src='" + e.user.profile_image_url + "'/>";
-            r = "<tr><td>" + n + "</td><td>" + e.user.name + "</td><td>" + p + "</td><td>" + e.tweet + "</td><td>" + e.source + "</td></tr>";
+            var c = e.category,
+                n = e.name,
+                t = e.timing_point,
+                a = e.athlete;
+
+                //r = "<tr><td>" + n + "</td><td>" + e.user.name + "</td><td>" + p + "</td><td>" + e.tweet + "</td></tr>";
 
             $("#trade_table tbody").prepend(r);
 
