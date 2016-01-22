@@ -62,10 +62,10 @@
             $("tr#waiting").hide();
 
             // For debugging purposes
-            console.log(e);
+            //console.log(e);
 
             var c = e.category,
-                n = e.name,
+                n = e.event_name,
                 t = e.timing_point,
                 a = e.athlete,
                 b = "",
@@ -78,7 +78,7 @@
             });
 
             $("#trade_table tbody").html(b);
-            $("#meta-info").html(n + c + t);
+            $("#meta-info").html(n + " - " + c + " - " + t);
 
         };
     }
