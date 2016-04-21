@@ -17,7 +17,7 @@
         <div class="col-md-12">
             <h2>Live Leaderboard</h2>
             <h4 id="meta-info">Waiting for update...</h4>
-            <table class="table table-bordered table-hover table-striped" id="trade_table">
+            <table class="table table-bordered table-hover table-striped" id="leaderboard_table">
                 <thead>
                 <tr>
                     <th>Position</th>
@@ -77,7 +77,7 @@
                 i++;
             });
 
-            $("#trade_table tbody").html(b);
+            $("#leaderboard_table tbody").html(b);
             $("#meta-info").html(n + " - " + c + " - " + t);
 
         };
